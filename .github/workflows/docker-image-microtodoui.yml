@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v6.0.2
       
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag todoacr01.azurecr.io/microtoui:v1
+      run: docker build . --file Dockerfile --tag todoacr01.azurecr.io/gettask:v1
       
     - name: Login to Acr
       run: az acr login --name todoacr01
