@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: get-tasks
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: get-tasks
@@ -16,7 +16,7 @@ spec:
       - name: get-tasks
         env:
           - name: CONNECTION_STRING
-            value: "Driver={ODBC Driver 17 for SQL Server};Server=tcp:devopsinsiderssrv.database.windows.net,1433;Database=todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"                                          
-        image: devopsinsiders/get-tasks
+            value: "Driver={ODBC Driver 17 for SQL Server};Server=tcp:todo-sqlserver-02.database.windows.net,1433;Database=todo-db-02;Uid=4dm1n157r470r;Pwd=4-v3ry-53cr37-p455w0rd;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"                                          
+        image: todoacr01.azurecr.io/gettask:v1
         ports:
         - containerPort: 8000
